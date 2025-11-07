@@ -1,7 +1,6 @@
 package phoneshop.phoneshop.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "brands")
@@ -11,29 +10,26 @@ public class Brand {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @NotBlank
   @Column(nullable = false, unique = true)
   private String name;
 
-  // Default constructor
-  public Brand() {}
+  // Constructors
+  public Brand() {
+  }
 
-  // Constructor for setting fields
-  public Brand(Long id, String name) {
-    this.id = id;
+  public Brand(String name) {
     this.name = name;
   }
 
-  // Getter and Setter for 'id'
+  // Getters and Setters
   public Long getId() {
-    return id;id
+    return id;
   }
 
   public void setId(Long id) {
     this.id = id;
   }
 
-  // Getter and Setter for 'name'
   public String getName() {
     return name;
   }
